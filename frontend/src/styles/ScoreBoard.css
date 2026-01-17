@@ -1,0 +1,153 @@
+.scoreboard-container {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.scoreboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.match-title {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.match-status-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: #ff4444;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.current-over-info {
+  background: #f0f4ff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 4px solid #667eea;
+}
+
+.over-label {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 0.9rem;
+}
+
+.over-details {
+  font-weight: 700;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.scoreboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.team-score-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.team-score-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 25px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.team-score-card:nth-child(2) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.team-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.score-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.runs {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.overs {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.match-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .scoreboard-container {
+    padding: 20px;
+  }
+
+  .match-title {
+    font-size: 1.4rem;
+  }
+
+  .team-score-section {
+    grid-template-columns: 1fr;
+  }
+
+  .match-info {
+    grid-template-columns: 1fr;
+  }
+}
