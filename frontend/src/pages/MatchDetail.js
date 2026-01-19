@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getMatchDetails } from '../services/api';
 import ScoreBoard from '../components/ScoreBoard';
@@ -11,14 +11,7 @@ const MatchDetail = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetchMatchDetails();
-    // Auto-refresh every 15 seconds
-    const interval = setInterval(fetchMatchDetails, 15000);
-    return () => clearInterval(interval);
-  }, [id]);
-
-  const fetchMatchDetails = async () => {
+  const fetchMatchDetails = useCallback(async () => {
     try {
       setLoading(true);
       const data = await getMatchDetails(id);
@@ -30,7 +23,14 @@ const MatchDetail = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    fetchMatchDetails();
+    // Auto-refresh every 15 seconds
+    const interval = setInterval(fetchMatchDetails, 15000);
+    return () => clearInterval(interval);
+  }, [fetchMatchDetails]);
 
   if (loading && !matchData) {
     return (

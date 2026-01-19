@@ -46,22 +46,19 @@ const ScoreBoard = ({ matchData }) => {
 
   const currentOver = getCurrentOverInfo();
 
-  // Get batsman on strike
-  const getBatsmanInfo = (teamScore) => {
-    if (teamScore && teamScore.batsmanStriker) {
-      return {
-        name: teamScore.batsmanStriker.batName || '',
-        runs: teamScore.batsmanStriker.runs || 0,
-        balls: teamScore.batsmanStriker.balls || 0,
-        fours: teamScore.batsmanStriker.fours || 0,
-        sixes: teamScore.batsmanStriker.sixes || 0
-      };
-    }
-    return null;
-  };
-
-  const team1Batsman = getBatsmanInfo(scoreCard?.team1Score);
-  const team2Batsman = getBatsmanInfo(scoreCard?.team2Score);
+  // Get batsman on strike (currently unused but kept for future use)
+  // const getBatsmanInfo = (teamScore) => {
+  //   if (teamScore && teamScore.batsmanStriker) {
+  //     return {
+  //       name: teamScore.batsmanStriker.batName || '',
+  //       runs: teamScore.batsmanStriker.runs || 0,
+  //       balls: teamScore.batsmanStriker.balls || 0,
+  //       fours: teamScore.batsmanStriker.fours || 0,
+  //       sixes: teamScore.batsmanStriker.sixes || 0
+  //     };
+  //   }
+  //   return null;
+  // };
 
   return (
     <div className="scoreboard-container">
